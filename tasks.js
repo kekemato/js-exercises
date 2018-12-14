@@ -14,7 +14,7 @@ const median = arr => {
     let = numsLength = arr.length;
     arr.sort((a, b) => a - b)
 
-        return numsLength % 2 === 0 ?
+    return numsLength % 2 === 0 ?
         ((arr[numsLength / 2 - 1] + arr[numsLength / 2]) / 2)
         : (arr[(numsLength - 1) / 2])
 }
@@ -29,12 +29,6 @@ console.log(minNumber(array))
 
 // -----------------------------
 
-const minNumber2 = arr => arr.reduce((reduced, element) => reduced < element ? reduced : element)
-
-console.log(minNumber2(array))
-
-// -----------------------------
-
 const maxNumber = arr => Math.max(...arr)
 
 console.log(maxNumber(array))
@@ -43,7 +37,7 @@ console.log(maxNumber(array))
 
 function arithmeticAverageWithoutArrayArg() {
     let sum = 0
-    for (let i = 0; i < arguments.length; i++){
+    for (let i = 0; i < arguments.length; i++) {
         sum += arguments[i]
     }
     return result = sum / arguments.length
@@ -53,50 +47,29 @@ console.log(arithmeticAverageWithoutArrayArg(1, 2, 3, 5, 7))
 
 // -----------------------------
 
-const arithmeticAverageWithoutArray = (...arr) => {
-    const sum = arr.reduce((reduced, element) => reduced + element, 0)
-    return result = sum / arr.length
-}
-
-console.log(arithmeticAverageWithoutArray(1, 2, 3, 5, 7))
-
-// -----------------------------
-
-const medianWithoutArray = (...arr) => {
-    let median = 0
-    let = numsLength = arr.length;
-    arr.sort((a, b) => a - b)
-
-    if (
-        numsLength % 2 === 0
-    ) {
-        median = (arr[numsLength / 2 - 1] + arr[numsLength / 2]) / 2;
-    } else {
-        median = arr[(numsLength - 1) / 2];
-    }
-
-    return median;
-}
-
-console.log(medianWithoutArray(1, 3, 5, 7, 8))
-
-// -----------------------------
-
-const minNumberWithoutArray = (...arr) => Math.min(...arr)
-
-console.log(minNumberWithoutArray(2, 3, 5, 7, 8))
-
-// -----------------------------
-
-const maxNumberWithoutArray = (...arr) => Math.max(...arr)
-
-console.log(maxNumberWithoutArray(1, 3, 5, 7, 8))
-
-// -----------------------------
-
 const getStats = arr => ({
     average: arithmeticAverage(arr),
     median: median(arr),
     max: minNumber(arr),
     min: maxNumber(arr)
 })
+
+// -----------------------------
+
+const getValueFromInput = input => (
+    arr = input.value.split(',')
+    .map(number => Number(number))
+    .filter(number => number || number === 0)
+)
+
+const buttonClickHandler = () => {
+    console.log(
+        getValueFromInput(document.querySelector('.input'))
+    )
+}
+
+document.querySelector('button').addEventListener(
+    'click',
+    buttonClickHandler
+)
+
