@@ -41,13 +41,17 @@ console.log(maxNumber(array))
 
 // -----------------------------
 
-// const arithmeticAverageWithoutArray = () => {
-//     const sum = 0
-//     for (let i = 0; i < arguments.length; i++){
-//         sum += arguments[i]
-//     }
-//     return result = sum / arguments.length
-// }
+function arithmeticAverageWithoutArrayArg() {
+    let sum = 0
+    for (let i = 0; i < arguments.length; i++){
+        sum += arguments[i]
+    }
+    return result = sum / arguments.length
+}
+
+console.log(arithmeticAverageWithoutArrayArg(1, 2, 3, 5, 7))
+
+// -----------------------------
 
 const arithmeticAverageWithoutArray = (...arr) => {
     const sum = arr.reduce((reduced, element) => reduced + element, 0)
@@ -87,3 +91,6 @@ console.log(minNumberWithoutArray(2, 3, 5, 7, 8))
 const maxNumberWithoutArray = (...arr) => Math.max(...arr)
 
 console.log(maxNumberWithoutArray(1, 3, 5, 7, 8))
+
+// -----------------------------
+
