@@ -58,18 +58,26 @@ const getStats = arr => ({
 
 const getValueFromInput = input => (
     arr = input.value.split(',')
-    .map(number => Number(number))
-    .filter(number => number || number === 0)
+        .map(number => Number(number))
+        .filter(number => number || number === 0)
 )
 
 const buttonClickHandler = () => {
-    console.log(
-        getValueFromInput(document.querySelector('.input'))
+    const stats = getStats(
+        getValueFromInput(
+            document.querySelector('.input')
+        )
     )
+
+    document.querySelector('.result').innerHTML = `
+            <p>MIN: ${stats.min}</p>
+            <p>MAX: ${stats.max}</p>
+            <p>AVG: ${stats.average}</p>
+            <p>MED: ${stats.median}</p>
+        `
 }
 
 document.querySelector('button').addEventListener(
     'click',
     buttonClickHandler
 )
-
