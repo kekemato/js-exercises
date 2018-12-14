@@ -94,3 +94,9 @@ console.log(maxNumberWithoutArray(1, 3, 5, 7, 8))
 
 // -----------------------------
 
+const getStats = arr => ({
+    average: arithmeticAverage(arr),
+    median: median(arr),
+    max: minNumber(arr),
+    min: maxNumber(arr)
+})
