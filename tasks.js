@@ -5,20 +5,26 @@ const arithmeticAverage = (arr) => {
     return result = sum / arr.length
 }
 
-console.log(arithmeticAverage(array))
+console.log(arithmeticAverage(arr))
 
-function median(array) {
+const median = arr => {
     let median = 0
-    let = numsLength = array.length;
+    let = numsLength = arr.length;
     numbers.sort((a, b) => a - b)
 
     if (
         numsLength % 2 === 0
     ) {
-        median = (array[numsLength / 2 - 1] + array[numsLength / 2]) / 2;
+        median = (arr[numsLength / 2 - 1] + arr[numsLength / 2]) / 2;
     } else {
-        median = array[(numsLength - 1) / 2];
+        median = arr[(numsLength - 1) / 2];
     }
 
     return median;
 }
+
+console.log(arithmeticAverage(array))
+
+const minNumber = arr => Math.min.apply(null, arr)
+
+console.log(minNumber(array))
