@@ -5,7 +5,7 @@ const arithmeticAverage = (arr) => {
     return result = sum / arr.length
 }
 
-console.log(arithmeticAverage(arr))
+console.log(arithmeticAverage(array))
 
 const median = arr => {
     let median = 0
@@ -25,6 +25,10 @@ const median = arr => {
 
 console.log(arithmeticAverage(array))
 
-const minNumber = arr => Math.min.apply(null, arr)
+const minNumber = arr => Math.min(...arr)
 
 console.log(minNumber(array))
+
+const minNumber2 = arr => arr.reduce((reduced, element) => reduced < element ? reduced : element)
+
+console.log(minNumber2(array))
